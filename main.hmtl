@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Solar con PVWatts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de Potencia kW Sistema Solar</h1>
+    <p>Ingresa tu consumo mensual (kWh) y obtén la capacidad recomendada en kW para cubrirlo.</p>
+    
+    <label for="consumo">Consumo mensual (kWh):</label>
+    <input type="number" id="consumo" placeholder="Ej: 500">
+    
+    <h3>Seleccionar ubicación:</h3>
+    <select id="ubicacion">
+      <option value="actual">Usar mi ubicación actual</option>
+      <option value="-2.1894,-79.8891">Guayaquil</option>
+      <option value="-0.1807,-78.4678">Quito</option>
+      <option value="-2.9006,-79.0045">Cuenca</option>
+      <option value="-0.2546,-79.1754">Santo Domingo</option>
+      <option value="-3.2581,-79.9606">Machala</option>
+      <option value="-0.9621,-80.7129">Manta</option>
+      <option value="-1.0546,-80.4545">Portoviejo</option>
+      <option value="-3.9931,-79.2042">Loja</option>
+      <option value="-1.2491,-78.6168">Ambato</option>
+      <option value="-1.6636,-78.6546">Riobamba</option>
+    </select>
+    
+    <button id="confirmarUbicacion">Confirmar Ubicación</button>
+    <p id="ubicacionInfo"></p>
+    <p id="ubicacionSeleccionada"></p> <!-- Nuevo párrafo para mostrar ubicación -->
+    
+    <button id="calcularBtn" disabled>Calcular Capacidad</button>
+    
+    <h3>Resultado:</h3>
+    <p id="resultado"></p>
+
+    <h3>Tabla de cálculo:</h3>
+    <table id="tablaResultados">
+      <thead>
+        <tr>
+          <th>Potencia (kW)</th>
+          <th>Generación mensual (kWh)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
