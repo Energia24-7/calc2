@@ -46,7 +46,7 @@ document.getElementById("calcularBtn").addEventListener("click", async function(
 
 // Función para buscar la mejor capacidad de paneles
 async function findBestCapacity(lat, lon, consumoMensual, apiKey) {
-    let capacity = 1;
+    let capacity = 0.5;
     const maxCapacity = 20;
     let bestCapacity = null;
     
@@ -69,7 +69,7 @@ async function findBestCapacity(lat, lon, consumoMensual, apiKey) {
                 const monthlyGen = data.outputs.ac_annual / 12;
                 agregarFilaTabla(capacity, monthlyGen);
                 
-                if (monthlyGen >= consumoMensual) {
+                if (monthlyGen*1.1 >= consumoMensual) {
                     bestCapacity = capacity;
                     break;
                 }
