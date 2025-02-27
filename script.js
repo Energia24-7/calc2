@@ -82,7 +82,7 @@ async function findBestCapacity(lat, lon, consumoMensual, apiKey) {
             return null;
         }
         
-        capacity += 1;
+        capacity += 0.5;
     }
     return bestCapacity;
 }
