@@ -24,6 +24,7 @@ document.getElementById("confirmarUbicacion").addEventListener("click", function
         document.getElementById("ubicacionSeleccionada").innerText = `Ubicación seleccionada: ${userLat}, ${userLon}`;
         document.getElementById("calcularBtn").disabled = false;
     }
+cargarMapa(userLat, userLon);
 });
 
 // Evento para calcular capacidad
@@ -86,6 +87,11 @@ async function findBestCapacity(lat, lon, consumoMensual, apiKey) {
     }
     return bestCapacity;
 }
+function cargarMapa(userLat, userLon) {
+        const mapa = document.getElementById("mapa");
+        mapa.innerHTML = `<iframe width="600" height="400" src="https://maps.google.com/maps?q=${lat},${lon}&z=10&output=embed"></iframe>`;
+    }
+
 
 // Función para limpiar la tabla antes de generar nuevos datos
 function limpiarTabla() {
