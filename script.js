@@ -69,7 +69,7 @@ async function findBestCapacity(lat, lon, consumoMensual, apiKey) {
                 const monthlyGen = data.outputs.ac_annual / 12;
                 agregarFilaTabla(capacity, monthlyGen);
                 
-                if (monthlyGen*1.1 >= consumoMensual) {
+                if (monthlyGen*1.05 >= consumoMensual) {
                     bestCapacity = capacity;
                     break;
                 }
